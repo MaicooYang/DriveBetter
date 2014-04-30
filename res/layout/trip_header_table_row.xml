@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/displayTablePaddingTopBottom"
+        android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+        android:paddingRight="@dimen/displayTablePaddingLeftRight"
+        android:paddingTop="@dimen/displayTablePaddingTopBottom"
+        android:text="@string/dateHeader"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="@dimen/displayTablePaddingTopBottom"
+        android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+        android:paddingRight="@dimen/displayTablePaddingLeftRight"
+        android:paddingTop="@dimen/displayTablePaddingTopBottom"
+        android:text="@string/consumptionHeader"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="@dimen/displayTablePaddingTopBottom"
+        android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+        android:paddingRight="@dimen/displayTablePaddingLeftRight"
+        android:paddingTop="@dimen/displayTablePaddingTopBottom"
+        android:text="@string/averageSpeedHeader"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="@dimen/displayTablePaddingTopBottom"
+        android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+        android:paddingRight="@dimen/displayTablePaddingLeftRight"
+        android:paddingTop="@dimen/displayTablePaddingTopBottom"
+        android:text="@string/distanceHeader"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="@dimen/displayTablePaddingTopBottom"
+        android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+        android:paddingRight="@dimen/displayTablePaddingLeftRight"
+        android:paddingTop="@dimen/displayTablePaddingTopBottom"
+        android:text="@string/arrivalTimeHeader"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="@dimen/displayTablePaddingTopBottom"
+        android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+        android:paddingRight="@dimen/displayTablePaddingLeftRight"
+        android:paddingTop="@dimen/displayTablePaddingTopBottom"
+        android:text="@string/routeHeader"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!-- <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/displayTablePaddingTopBottom"
+        android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+        android:paddingRight="@dimen/displayTablePaddingLeftRight"
+        android:paddingTop="@dimen/displayTablePaddingTopBottom"
+        android:text="@string/notesHeader"
+        android:textAppearance="?android:attr/textAppearanceSmall" /> -->
+
+</TableRow>

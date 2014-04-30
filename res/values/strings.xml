@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DriveBetter</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="action_settings">Settings</string>
+    
+    
+    <string name="tripInformationHeader">Trip Information</string>
+    <string name="consumptionHeader">Cons.</string>
+    <string name="averageSpeedHeader">Avg.</string>
+    <string name="distanceHeader">Dist.</string>
+    <string name="arrivalTimeHeader">ToA</string>
+    <string name="routeHeader">Route</string>
+    <string name="notesHeader">Notes</string>
+    <string name="dateHeader">Date</string>
+
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+</resources>

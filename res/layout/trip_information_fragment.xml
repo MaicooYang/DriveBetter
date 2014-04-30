@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/bigHeaderMargin"
+        android:layout_marginTop="@dimen/bigHeaderMargin"
+        android:text="@string/tripInformationHeader"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TableLayout
+        android:id="@+id/tripInputTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/trip_header_table_row" />
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/displayTablePaddingLeftRight"
+            android:paddingRight="@dimen/displayTablePaddingLeftRight" >
+
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="@dimen/decimalEditTextWidth"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/consumptionEditText"
+                android:layout_width="@dimen/decimalEditTextWidth"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/defaultEditTextSize" >
+            </EditText>
+
+            <EditText
+                android:id="@+id/averageSpeedEditText"
+                android:layout_width="@dimen/decimalEditTextWidth"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/defaultEditTextSize" />
+
+            <EditText
+                android:id="@+id/distanceEditText"
+                android:layout_width="@dimen/decimalEditTextWidth"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/defaultEditTextSize" />
+
+            <TextView
+                android:id="@+id/arrivalTimeTextView"
+                android:layout_width="@dimen/decimalEditTextWidth"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <EditText
+                android:id="@+id/routeEditText"
+                android:layout_width="@dimen/textEditTextWidth"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textCapWords"
+                android:textSize="@dimen/defaultEditTextSize" />
+
+            <!--
+            <EditText
+                android:id="@+id/notesEditText"
+                android:layout_width="@dimen/textEditTextWidth"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textCapSentences"
+                android:textSize="@dimen/defaultEditTextSize" />  -->
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right" >
+
+        <Button
+            android:id="@+id/clearDBButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/thinButtonHeight"
+            android:text="ClearDB" />
+
+        <Button
+            android:id="@+id/clearButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/thinButtonHeight"
+            android:text="@string/clear" />
+
+        <Button
+            android:id="@+id/saveButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/thinButtonHeight"
+            android:text="@string/save" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tripTableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/trip_header_table_row" />
+    </TableLayout>
+
+</LinearLayout>
