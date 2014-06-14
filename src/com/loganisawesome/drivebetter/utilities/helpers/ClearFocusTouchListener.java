@@ -16,7 +16,7 @@ public class ClearFocusTouchListener implements OnTouchListener
 {
 	private ClearFocusInterface clearFocusListener;
 	private Context context;
-	
+
 	public ClearFocusTouchListener(Context context, ClearFocusInterface listener)
 	{
 		this.clearFocusListener = listener;
@@ -30,10 +30,10 @@ public class ClearFocusTouchListener implements OnTouchListener
 		{
 			int x = (int) event.getRawX();
 			int y = (int) event.getRawY();
-			
+
 			IBinder windowToken = v.getWindowToken();
 			ClearFocusTouchListener.hideKeyboard(this.context, windowToken);
-			
+
 			List<View> views = this.clearFocusListener.getViewsToClearFocus();
 			Rect outRect = new Rect();
 			for (View view : views)
@@ -48,10 +48,10 @@ public class ClearFocusTouchListener implements OnTouchListener
 				}
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	public static void hideKeyboard(Context context, IBinder windowToken)
 	{
 		InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);

@@ -7,10 +7,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.TimeZone;
 
 import com.loganisawesome.drivebetter.R;
-import com.loganisawesome.drivebetter.database.DatabaseHelper;
 import com.loganisawesome.drivebetter.database.DatabaseManager;
 import com.loganisawesome.drivebetter.database.models.TripModel;
 import com.loganisawesome.drivebetter.database.objects.Trip;
@@ -25,15 +23,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
-import android.text.format.DateFormat;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -47,7 +42,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 	private EditText distanceEditText;
 	// TODO Time picker dialog
 	private EditText routeEditText;
-	//private EditText notesEditText;
+	// private EditText notesEditText;
 
 	private TableLayout tripTable;
 	private List<TripModel> tripList = new ArrayList<>();
@@ -60,7 +55,8 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 	private Double distance;
 	private Date arrivalTime;
 	private String route;
-	//private String notes;
+
+	// private String notes;
 
 	public static TripInformationFragment newInstance()
 	{
@@ -89,7 +85,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 		this.distanceEditText = (EditText) view.findViewById(R.id.distanceEditText);
 		// Time picker
 		this.routeEditText = (EditText) view.findViewById(R.id.routeEditText);
-		//this.notesEditText = (EditText) view.findViewById(R.id.notesEditText);
+		// this.notesEditText = (EditText) view.findViewById(R.id.notesEditText);
 
 		// Buttons
 		this.clearButton = (Button) view.findViewById(R.id.clearButton);
@@ -99,7 +95,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 		// TODO Will be removed
 		Button clearDBButton = (Button) view.findViewById(R.id.clearDBButton);
 		clearDBButton.setOnClickListener(this);
-		
+
 		// Tables
 		TableLayout tripInputTableLayout = (TableLayout) view.findViewById(R.id.tripInputTableLayout);
 		tripInputTableLayout.setShrinkAllColumns(true);
@@ -107,7 +103,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 		this.tripTable = (TableLayout) view.findViewById(R.id.tripTableLayout);
 		this.tripTable.setShrinkAllColumns(true);
 		this.tripTable.setStretchAllColumns(true);
-		
+
 		populateTripTable();
 
 		return view;
@@ -121,7 +117,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 		views.add(this.averageSpeedEditText);
 		views.add(this.distanceEditText);
 		views.add(this.routeEditText);
-		//views.add(this.notesEditText);
+		// views.add(this.notesEditText);
 		return views;
 	}
 
@@ -182,8 +178,8 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 		this.distanceEditText.setText(null);
 		// TODO Reset time
 		this.routeEditText.setText(null);
-		//this.notesEditText.setText(null);
-		
+		// this.notesEditText.setText(null);
+
 		this.consumptionEditText.requestFocus();
 	}
 
@@ -197,7 +193,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 			trip.setDistance(this.distance);
 			trip.setArrivalTime(this.arrivalTime);
 			trip.setRoute(this.route);
-			//trip.setNotes(this.notes);
+			// trip.setNotes(this.notes);
 
 			SaveTripTask task = new SaveTripTask(this, trip);
 			task.execute();
@@ -223,7 +219,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 			// TODO get from time picker
 			this.arrivalTime = Calendar.getInstance().getTime();
 			this.route = this.routeEditText.getText().toString();
-			//this.notes = this.notesEditText.getText().toString();
+			// this.notes = this.notesEditText.getText().toString();
 
 			try
 			{
@@ -243,11 +239,11 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 	private void populateTripTable()
 	{
 		if (this.tripTable != null)
-		{			
+		{
 			DecimalFormat decimalFormat = new DecimalFormat("#.##");
 			SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd", Locale.getDefault());
 			SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
-			
+
 			int paddingLeftRight = (int) getActivity().getResources().getDimension(R.dimen.displayTablePaddingLeftRight);
 			int paddingTopBottom = (int) getActivity().getResources().getDimension(R.dimen.displayTablePaddingTopBottom);
 
@@ -264,15 +260,15 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 				TextView distanceTextView = new TextView(getActivity());
 				TextView timeTextView = new TextView(getActivity());
 				TextView routeTextView = new TextView(getActivity());
-				//TextView notesTextView = new TextView(getActivity());
-				
+				// TextView notesTextView = new TextView(getActivity());
+
 				dateTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
 				consumptionTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
 				avgSpeedTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
 				distanceTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
 				timeTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
 				routeTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
-				//notesTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
+				// notesTextView.setPadding(paddingLeftRight, paddingTopBottom, paddingLeftRight, paddingTopBottom);
 
 				dateTextView.setText(dateFormat.format(trip.getArrivalTime()));
 				consumptionTextView.setText(decimalFormat.format(trip.getConsumption()));
@@ -280,7 +276,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 				distanceTextView.setText(decimalFormat.format(trip.getDistance()));
 				timeTextView.setText(timeFormat.format(trip.getArrivalTime()));
 				routeTextView.setText(trip.getRoute());
-				//notesTextView.setText(trip.getNotes());
+				// notesTextView.setText(trip.getNotes());
 
 				row.addView(dateTextView);
 				row.addView(consumptionTextView);
@@ -288,7 +284,7 @@ public class TripInformationFragment extends Fragment implements ClearFocusInter
 				row.addView(distanceTextView);
 				row.addView(timeTextView);
 				row.addView(routeTextView);
-				//row.addView(notesTextView);
+				// row.addView(notesTextView);
 
 				this.tripTable.addView(row);
 			}

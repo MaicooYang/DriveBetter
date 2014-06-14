@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
+import com.loganisawesome.drivebetter.database.objects.Accel;
 import com.loganisawesome.drivebetter.database.objects.Trip;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper
@@ -16,7 +17,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
 	 * Database Configuration
 	 **********************************************************************************************/
 	private static final String DATABASE_NAME = "DriveBetter.db";
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 
 	/**********************************************************************************************
 	 * Constructor
@@ -35,6 +36,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
 		try
 		{
 			TableUtils.createTable(connectionSource, Trip.class);
+			TableUtils.createTable(connectionSource, Accel.class);
 		}
 		catch (SQLException e)
 		{
@@ -45,16 +47,16 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper
 	@Override
 	public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion)
 	{
-		// TODO: might need to come up with clever upgrade methods
 		try
 		{
-			TableUtils.dropTable(connectionSource, Trip.class, true);
+			if (oldVersion < 2)
+			{
+				TableUtils.createTable(connectionSource, Accel.class);
+			}
 		}
 		catch (SQLException e)
 		{
 			e.printStackTrace();
 		}
-
-		onCreate(database, connectionSource);
 	}
 }
